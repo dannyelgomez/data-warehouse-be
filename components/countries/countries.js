@@ -39,6 +39,8 @@ const getCountries = async (req, res) => {
 
 const updateCountry = async (req, res) => {
 	let id = req.params.id;
+	const { name, region_id } = req.body;
+
 	await sequelize.query(`UPDATE countries SET name='${name}', countries_id='${region_id}'
         WHERE countries_id=${id}`)
 		.then(result => {

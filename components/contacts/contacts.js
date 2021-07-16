@@ -37,8 +37,8 @@ const getContacts = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
-  let id = req.params.id;
-  let { fullName, email, position, channel, interest, companies_id } = req.body;
+  const id = req.params.id;
+  const { fullName, email, position, channel, interest, companies_id } = req.body;
   
   await sequelize.query(`UPDATE contacts SET fullName='${fullName}', email='${email}', position='${position}', channel='${channel}', interest='${interest}', companies_id='${companies_id}'
           WHERE contacts_id=${id}`)

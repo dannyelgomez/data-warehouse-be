@@ -38,7 +38,7 @@ const getRegions = async (req, res) => {
 };
 
 const updateRegion = async (req, res) => {
-	let id = req.params.id;
+	const id = req.params.id;
 	const { name } = req.body;
 
 	await sequelize.query(`UPDATE region SET name='${name}'
